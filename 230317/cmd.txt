@@ -1,0 +1,7 @@
+curl -X POST -d "username=Saad&password=Saad" http://localhost/api/login
+curl -X POST -d "message= nvx post" http://localhost/api/createPost
+curl -X DELETE http://localhost/api/deletePost/1
+curl http://localhost/api/showLastPosts
+curl http://localhost/api/getPost/1
+
+
