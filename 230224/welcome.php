@@ -23,9 +23,9 @@ if (isset($_SESSION["userEmail"])) { ?>
                 exit();
             } else {
                 $insert = $conn->prepare(
-                    "INSERT INTO posts ( content ) VALUES (?)"
+                    "INSERT INTO posts ( content , userName ) VALUES (?,?)"
                 );
-                if ($insert->execute([$_POST["content"]])) {
+                if ($insert->execute([$_POST["content"],$_SESSION["userName"]])) {
                 }
             }
         } ?>
@@ -38,7 +38,8 @@ if (isset($_SESSION["userEmail"])) { ?>
         echo "
         <div>
             {$post["content"]} :  
-            {$post["created_at"]}
+            {$post["created_at"]} Posté par 
+	    {$post["userName"]}
         </div>
       
 		";
