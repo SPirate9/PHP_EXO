@@ -30,7 +30,7 @@ if (isset($_SESSION["userEmail"])) { ?>
             }
         } ?>
     </form>
-    <p>Vos Tweet : <?php
+    <p> Tweets : <?php
     $display = $conn->prepare("SELECT * FROM posts ORDER BY ID DESC LIMIT 10");
     $display->execute();
     $data = $display->fetchAll();
