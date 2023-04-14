@@ -30,14 +30,15 @@ SET time_zone = "+00:00";
 CREATE TABLE `posts` (
   `ID` int(11) NOT NULL,
   `content` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `userName` varchar(30) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Déchargement des données de la table `posts`
 --
 
-INSERT INTO `posts` (`ID`, `content`, `created_at`) VALUES
+INSERT INTO `posts` (`ID`, `content`, `created_at` , `userName`) VALUES
 (68, 'J\'AI PAS ENCORE FINI', '2023-03-03 21:58:20'),
 (67, 'coucou', '2023-03-03 21:25:18'),
 (66, 'ça fonctionne', '2023-03-03 20:41:53'),
